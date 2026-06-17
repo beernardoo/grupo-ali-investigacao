@@ -117,7 +117,7 @@ header.small .nav{height:64px;background:rgba(9,9,9,.86);border-color:var(--line
 .sec-head p{color:var(--desc);font-weight:300;margin-top:12px;max-width:560px}
 
 /* services cards */
-.cards{display:grid;grid-template-columns:repeat(5,1fr);gap:16px}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
 .cardx{position:relative;border:1px solid var(--line2);border-radius:var(--r);padding:26px 22px;background:var(--card);min-height:206px;transition:transform .35s,border-color .35s,background .35s;overflow:hidden}
 .cardx::before{content:"";position:absolute;inset:0;border-radius:var(--r);padding:1px;opacity:0;transition:.35s;
   background:linear-gradient(140deg,var(--gold),transparent 45%,transparent 60%,rgba(212,175,55,.4));
@@ -273,7 +273,7 @@ footer{border-top:1px solid var(--line2);background:#070707}
 
 /* ===== RESPONSIVO ===== */
 @media(max-width:1024px){
-  .cards{grid-template-columns:repeat(3,1fr)}
+  .cards{grid-template-columns:repeat(2,1fr)}
   .steps{grid-template-columns:1fr;gap:16px}
   .cbox{grid-template-columns:1fr;max-width:560px}
   .cinfo{border-left:0;border-top:1px solid var(--line2)}
@@ -370,40 +370,46 @@ footer{border-top:1px solid var(--line2);background:#070707}
 <section class="sec" id="servicos">
   <div class="wrap">
     <div class="sec-head rv">
-      <span class="eyebrow">Capacidades</span>
-      <h2>Novas fronteiras da investigação</h2>
-      <p>Inteligência de campo e digital para pessoas físicas, empresas e departamentos jurídicos — com discrição absoluta.</p>
+      <span class="eyebrow">Nossos serviços</span>
+      <h2>Soluções inteligentes para <span class="g">decisões seguras</span></h2>
+      <p>Atuação ética, técnica e sigilosa em cada caso — para pessoas, famílias e empresas.</p>
     </div>
     <div class="cards">
       <div class="cardx rv">
         <span class="no">01</span>
-        <div class="ic"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="13" rx="1.5"/><path d="M3 17h18M9 21h6M7 8l2.5 2L7 12M12.5 12H16"/></svg></div>
-        <h3>Inteligência de Dados &amp; OSINT</h3>
-        <p>Pesquisas detalhadas, terminal.</p>
+        <div class="ic"><svg viewBox="0 0 24 24"><circle cx="8" cy="8" r="3"/><circle cx="16" cy="8" r="3"/><path d="M2.5 20a5.5 5.5 0 0 1 11 0M13 20a5.5 5.5 0 0 1 9-4.3"/></svg></div>
+        <h3>Investigação Conjugal</h3>
+        <p>Descubra a verdade com provas concretas e sigilo absoluto.</p>
       </div>
       <div class="cardx rv">
         <span class="no">02</span>
-        <div class="ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3"/><path d="M12 1v3M12 20v3M1 12h3M20 12h3"/></svg></div>
-        <h3>Localização &amp; Rastreamento</h3>
-        <p>Pessoas e Veículos.</p>
+        <div class="ic"><svg viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M3 12.5h18"/></svg></div>
+        <h3>Investigação Empresarial</h3>
+        <p>Proteja seu patrimônio e sua empresa contra fraudes e ameaças.</p>
       </div>
       <div class="cardx rv">
         <span class="no">03</span>
-        <div class="ic"><svg viewBox="0 0 24 24"><path d="M14 3H7a1.5 1.5 0 0 0-1.5 1.5v15A1.5 1.5 0 0 0 7 21h10a1.5 1.5 0 0 0 1.5-1.5V7.5z"/><path d="M14 3v4.5h4.5"/><circle cx="12" cy="13" r="2.2"/><path d="M9.8 18c.4-1.4 1.2-2 2.2-2s1.8.6 2.2 2"/></svg></div>
-        <h3>Investigação Empresarial</h3>
-        <p>Pessoas Físicas e Jurídicas.</p>
+        <div class="ic"><svg viewBox="0 0 24 24"><path d="M12 21s-7-5.7-7-11a7 7 0 0 1 14 0c0 5.3-7 11-7 11z"/><circle cx="12" cy="10" r="2.4"/></svg></div>
+        <h3>Localização de Pessoas</h3>
+        <p>Localizamos pessoas com rapidez e eficiência.</p>
       </div>
       <div class="cardx rv" id="cursos">
         <span class="no">04</span>
-        <div class="ic"><svg viewBox="0 0 24 24"><path d="M12 3v18M7 21h10M12 6l-7 2 3 6a3.5 3.5 0 0 1-6 0l3-6m13-2l-7 2 3 6a3.5 3.5 0 0 0 6 0l-3-6"/></svg></div>
-        <h3>Departamento Jurídico Integrado</h3>
-        <p>Balança.</p>
+        <div class="ic"><svg viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="2"/><circle cx="12" cy="13.5" r="3.4"/><path d="M8.5 7 10 4.8h4L15.5 7"/></svg></div>
+        <h3>Monitoramento e Levantamento de Informações</h3>
+        <p>Acompanhamento discreto e coleta de dados com precisão.</p>
       </div>
       <div class="cardx rv">
         <span class="no">05</span>
-        <div class="ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="9" r="6"/><path d="M8.5 14.5L7 22l5-2.6L17 22l-1.5-7.5"/></svg></div>
-        <h3>Cursos &amp; Treinamento Certificado</h3>
-        <p>CBO: 3518-05.</p>
+        <div class="ic"><svg viewBox="0 0 24 24"><path d="M12 3v18M7 21h10M12 6l-7 2 3 6a3.5 3.5 0 0 1-6 0l3-6m13-2l-7 2 3 6a3.5 3.5 0 0 0 6 0l-3-6"/></svg></div>
+        <h3>Provas para Processos Judiciais</h3>
+        <p>Provas lícitas e consistentes para apresentação em juízo.</p>
+      </div>
+      <div class="cardx rv">
+        <span class="no">06</span>
+        <div class="ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.2"/><path d="M5.5 20a6.5 6.5 0 0 1 13 0"/><path d="M19 4l1 1.6 1.8.3-1.3 1.3.3 1.8L19 8.2 17.5 9l.3-1.8L16.5 5.9l1.8-.3z"/></svg></div>
+        <h3>Consultoria Investigativa</h3>
+        <p>Análise de dados e estratégias personalizadas para cada caso.</p>
       </div>
     </div>
   </div>
