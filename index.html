@@ -27,7 +27,9 @@ a{text-decoration:none;color:inherit}
 .wrap{max-width:var(--maxw);margin:0 auto;padding:0 26px}
 .osw{font-family:'Oswald',sans-serif}
 .g{color:var(--gold)}
-.gt{background:linear-gradient(180deg,#ffffff 0%,#e4ecf7 15%,#9aa7ba 38%,#f6faff 52%,#b0bbcd 68%,#7f8ca2 86%,#d6dee9 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.gt{background:linear-gradient(180deg,#ffffff 0%,#dbe6f5 13%,#9fb0c8 34%,#ffffff 50%,#c6d2e4 58%,#74859e 80%,#eaf1fa 100%);-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 1px 0 rgba(0,0,0,.45)) drop-shadow(0 0 11px rgba(57,169,255,.45))}
+.gt.sheen{background:linear-gradient(100deg,#7f8ea6 0%,#c9d5e8 16%,#ffffff 32%,#eef5ff 40%,#aab8cf 56%,#dde6f3 74%,#8394ab 100%);background-size:230% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:sheen 5.5s linear infinite}
+@keyframes sheen{0%{background-position:185% 0}100%{background-position:-45% 0}}
 
 /* ----- atmosfera ----- */
 .bgfx{position:fixed;inset:0;z-index:-3;background:linear-gradient(180deg,#0a0a0a,#0b0b0b 50%,#080808)}
@@ -54,7 +56,7 @@ a{text-decoration:none;color:inherit}
 
 /* ----- buttons ----- */
 .btn{position:relative;display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:15px 30px;border-radius:32px;font-weight:600;font-size:.92rem;cursor:pointer;border:1.5px solid transparent;transition:transform .25s,box-shadow .25s,background .25s,color .25s;white-space:nowrap;overflow:hidden;will-change:transform}
-.btn-g{color:#06243d;background:linear-gradient(180deg,var(--gold2),var(--gold));box-shadow:0 10px 30px rgba(60,150,255,.3)}
+.btn-g{color:#04213a;background:linear-gradient(180deg,#bfe2ff,#5bb4ff 48%,#1f8fee);box-shadow:0 10px 30px rgba(57,169,255,.4),inset 0 1px 1px rgba(255,255,255,.7),inset 0 -2px 6px rgba(8,60,120,.4)}
 .btn-g::after{content:"";position:absolute;inset:0;background:linear-gradient(120deg,transparent,rgba(255,255,255,.65),transparent);transform:translateX(-130%)}
 .btn-g:hover{box-shadow:0 16px 40px rgba(60,150,255,.45)}
 .btn-g:hover::after{transform:translateX(130%);transition:transform .7s}
@@ -71,7 +73,7 @@ header{position:fixed;top:0;left:0;right:0;z-index:60;transition:.35s}
   border:1px solid var(--line2);border-radius:18px;background:rgba(12,12,12,.5);backdrop-filter:blur(18px);transition:.35s}
 header.small .nav{height:64px;background:rgba(9,9,9,.86);border-color:var(--line)}
 .brand{display:flex;align-items:center;gap:12px}
-.brand svg{width:42px;height:42px;flex:none;filter:drop-shadow(0 2px 7px rgba(60,150,255,.32))}
+.brand svg{width:42px;height:42px;flex:none;filter:drop-shadow(0 0 7px rgba(57,169,255,.55)) drop-shadow(0 2px 4px rgba(0,0,0,.5))}
 .brand b{font-family:'Oswald',sans-serif;font-size:1.32rem;letter-spacing:4px;font-weight:700}
 .brand-tx{display:flex;flex-direction:column;line-height:1.04}
 .brand-tx small{font-family:'Oswald',sans-serif;font-size:.5rem;letter-spacing:2.8px;color:var(--gold);font-weight:600;margin-top:3px;white-space:nowrap}
@@ -322,7 +324,7 @@ footer{border-top:1px solid var(--line2);background:#070707}
         <circle cx="21.6" cy="29" r="5.1" fill="none" stroke="url(#gold)" stroke-width="2.2"/>
         <path d="M25.6 33 30.2 37.2" stroke="url(#gold)" stroke-width="2.8" stroke-linecap="round"/>
       </svg>
-      <span class="brand-tx"><b class="gt">GRUPO ALI</b><small>DETETIVES ASSOCIADOS ®</small></span>
+      <span class="brand-tx"><b class="gt sheen">GRUPO ALI</b><small>DETETIVES ASSOCIADOS ®</small></span>
     </a>
     <nav class="menu" id="menu">
       <a href="#topo" class="active">INÍCIO</a>
@@ -345,7 +347,7 @@ footer{border-top:1px solid var(--line2);background:#070707}
     <span class="eyebrow rv">Investigação Privada · Lei 13.432/17</span>
     <h1>
       <span class="ln"><span>A verdade que você precisa.</span></span>
-      <span class="ln"><span class="gt">Com o sigilo que você exige.</span></span>
+      <span class="ln"><span class="gt sheen">Com o sigilo que você exige.</span></span>
     </h1>
     <p class="lead rv">Liderando a investigação privada com novas tecnologias e métodos avançados. Deixe o Grupo Ali resolver seu caso.</p>
     <div class="cta rv">
