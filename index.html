@@ -144,7 +144,7 @@ header.small .brand img.logo-img{height:66px}
 @keyframes beam{to{--beam:360deg}}
 .cardx:nth-child(3n)::before{animation-delay:-1.6s}
 .cardx:nth-child(3n+2)::before{animation-delay:-3.2s}
-@media(prefers-reduced-motion:reduce){.cardx::before,.cbox::before,.btn-g::before{animation:none;background:linear-gradient(140deg,#cfd8e6,transparent 50%,var(--blue))}}
+@media(prefers-reduced-motion:reduce){.cardx::before,.cbox::before,.btn-g::before,.step::before{animation:none;background:linear-gradient(140deg,#cfd8e6,transparent 50%,var(--blue))}}
 .cardx::after{content:"";position:absolute;width:280px;height:280px;border-radius:50%;left:var(--x,50%);top:var(--y,50%);transform:translate(-50%,-50%);
   background:radial-gradient(circle,rgba(175,193,217,.13),transparent 60%);opacity:0;transition:opacity .35s;pointer-events:none}
 .cardx:hover{transform:translateY(-7px);background:#141210;border-color:var(--line)}
@@ -159,6 +159,12 @@ header.small .brand img.logo-img{height:66px}
 .process{background:linear-gradient(180deg,transparent,rgba(175,193,217,.02),transparent)}
 .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;counter-reset:s}
 .step{position:relative;padding:34px 28px;border:1px solid var(--line2);border-radius:var(--r);background:rgba(15,15,15,.6);transition:.35s}
+.step::before{content:"";position:absolute;inset:0;border-radius:var(--r);padding:1.4px;pointer-events:none;opacity:.5;transition:opacity .35s;
+  background:conic-gradient(from var(--beam),transparent 0deg,#cfd8e6 36deg,var(--blue) 62deg,var(--glint) 86deg,transparent 118deg,transparent 360deg);
+  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;animation:beam 5.5s linear infinite}
+.step:nth-child(2)::before{animation-delay:-1.8s}
+.step:nth-child(3)::before{animation-delay:-3.6s}
+.step:hover::before{opacity:1}
 .step:hover{border-color:var(--line);transform:translateY(-5px)}
 .step .n{font-family:'Oswald',sans-serif;font-size:2.4rem;font-weight:700;line-height:1;color:transparent;-webkit-text-stroke:1.5px var(--gold);margin-bottom:16px}
 .step h4{font-family:'Oswald',sans-serif;text-transform:uppercase;letter-spacing:.5px;font-size:1.15rem;margin-bottom:10px}
