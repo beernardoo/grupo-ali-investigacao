@@ -153,18 +153,13 @@ header.small .brand img.logo-img{height:66px}
 .step p{color:var(--desc);font-weight:300;font-size:.92rem;line-height:1.55}
 
 /* ===== CURSOS ===== */
-.curso-box{display:grid;grid-template-columns:1.25fr .85fr;gap:0;max-width:1000px;margin:0 auto;border:1px solid var(--line);border-radius:24px;overflow:hidden;background:linear-gradient(160deg,rgba(24,28,38,.6),rgba(12,12,12,.6));backdrop-filter:blur(16px);box-shadow:0 34px 90px rgba(0,0,0,.5)}
-.curso-left{padding:40px}
-.curso-left h3{font-family:'Oswald',sans-serif;text-transform:uppercase;letter-spacing:1px;font-size:1.18rem;margin-bottom:22px;color:var(--white)}
-.curso-list{list-style:none;display:flex;flex-direction:column;gap:4px}
-.curso-list li{display:flex;align-items:center;gap:14px;padding:13px 0;border-bottom:1px solid var(--line2);font-weight:500;font-size:.96rem}
-.curso-list li:last-child{border-bottom:0}
-.curso-list .ck{flex:none;width:30px;height:30px;border-radius:9px;display:grid;place-items:center;background:linear-gradient(160deg,#54a0ff,#1f7fe0);box-shadow:0 4px 10px rgba(31,127,224,.4),inset 0 1px 1px rgba(255,255,255,.5)}
-.curso-list .ck svg{width:16px;height:16px;stroke:#fff;fill:none;stroke-width:2.6}
-.curso-right{padding:40px;border-left:1px solid var(--line2);background:rgba(57,169,255,.04);display:flex;flex-direction:column;justify-content:center;text-align:center}
-.curso-right .seal{font-family:'Oswald',sans-serif;letter-spacing:1px;font-size:.78rem;color:var(--blue2);border:1px solid var(--line);border-radius:999px;padding:8px 16px;display:inline-block;margin:0 auto 18px;background:rgba(57,169,255,.06)}
-.curso-right p{color:var(--desc);font-weight:300;font-size:.92rem;line-height:1.6;margin-bottom:22px}
-.curso-right .btn-g{width:100%;justify-content:center}
+.cardx.cta-card{display:flex;flex-direction:column;align-items:flex-start;background:linear-gradient(160deg,rgba(57,169,255,.16),rgba(12,12,12,.5));border-color:rgba(57,169,255,.5)}
+.cardx.cta-card:hover{border-color:var(--blue);background:linear-gradient(160deg,rgba(57,169,255,.22),rgba(16,16,16,.6))}
+.cardx.cta-card .ic{background:linear-gradient(160deg,#54a0ff,#1f7fe0);border:0;box-shadow:0 6px 16px rgba(31,127,224,.4),inset 0 1px 1px rgba(255,255,255,.5)}
+.cardx.cta-card .ic svg{stroke:#fff}
+.cardx.cta-card .seal{font-family:'Oswald',sans-serif;letter-spacing:1px;font-size:.7rem;color:var(--blue2);margin-bottom:9px}
+.cardx.cta-card p{margin-bottom:16px}
+.cardx.cta-card .btn-g{margin-top:auto;width:100%;justify-content:center;padding:12px 18px;font-size:.86rem}
 
 /* ===== CREDENCIAL (brasão) ===== */
 .crest{position:relative;padding:96px 0;text-align:center;overflow:hidden}
@@ -302,9 +297,6 @@ footer{border-top:1px solid var(--line2);background:#070707}
   .steps{grid-template-columns:1fr;gap:16px}
   .cbox{grid-template-columns:1fr;max-width:560px}
   .cinfo{border-left:0;border-top:1px solid var(--line2)}
-  .curso-box{grid-template-columns:1fr;max-width:600px}
-  .curso-right{border-left:0;border-top:1px solid var(--line2)}
-  .curso-left,.curso-right{padding:30px}
   .hero .scrim{background:linear-gradient(90deg,var(--bg) 24%,rgba(10,10,10,.55) 60%,rgba(10,10,10,.6)),linear-gradient(0deg,var(--bg) 2%,rgba(10,10,10,.4) 24%,transparent 50%)}
 }
 @media(max-width:680px){
@@ -444,20 +436,42 @@ footer{border-top:1px solid var(--line2);background:#070707}
       <h2>Curso de Detetive Profissional</h2>
       <p>Formação de Detetive Particular focada em investigação confidencial e serviços de inteligência para atuação legal no País.</p>
     </div>
-    <div class="curso-box rv">
-      <div class="curso-left">
-        <h3>O que você vai dominar</h3>
-        <ul class="curso-list">
-          <li><span class="ck"><svg viewBox="0 0 24 24"><path d="M5 12.5 10 17.5 19 7"/></svg></span>Técnicas de Investigação Confidencial</li>
-          <li><span class="ck"><svg viewBox="0 0 24 24"><path d="M5 12.5 10 17.5 19 7"/></svg></span>Inteligência Privada</li>
-          <li><span class="ck"><svg viewBox="0 0 24 24"><path d="M5 12.5 10 17.5 19 7"/></svg></span>Procedimentos Operacionais</li>
-          <li><span class="ck"><svg viewBox="0 0 24 24"><path d="M5 12.5 10 17.5 19 7"/></svg></span>Vigilância e Coleta de Informações</li>
-          <li><span class="ck"><svg viewBox="0 0 24 24"><path d="M5 12.5 10 17.5 19 7"/></svg></span>Atuação Legal do Detetive Particular no Brasil</li>
-        </ul>
+    <div class="cards">
+      <div class="cardx rv">
+        <span class="no">01</span>
+        <div class="ic"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4-4"/></svg></div>
+        <h3>Investigação Confidencial</h3>
+        <p>Técnicas profissionais de apuração com sigilo absoluto.</p>
       </div>
-      <div class="curso-right">
+      <div class="cardx rv">
+        <span class="no">02</span>
+        <div class="ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="2.2"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M19 5l-2 2M7 17l-2 2"/></svg></div>
+        <h3>Inteligência Privada</h3>
+        <p>Coleta e análise estratégica de informações.</p>
+      </div>
+      <div class="cardx rv">
+        <span class="no">03</span>
+        <div class="ic"><svg viewBox="0 0 24 24"><path d="M4 6h10M4 12h10M4 18h10"/><path d="M17.5 5.5l1.5 1.5 2.5-2.5M17.5 11.5l1.5 1.5 2.5-2.5M17.5 17.5l1.5 1.5 2.5-2.5"/></svg></div>
+        <h3>Procedimentos Operacionais</h3>
+        <p>Protocolos e conduta profissional em campo.</p>
+      </div>
+      <div class="cardx rv">
+        <span class="no">04</span>
+        <div class="ic"><svg viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="2"/><circle cx="12" cy="13.5" r="3.4"/><path d="M8.5 7 10 4.8h4L15.5 7"/></svg></div>
+        <h3>Vigilância &amp; Coleta</h3>
+        <p>Observação discreta e registro técnico de dados.</p>
+      </div>
+      <div class="cardx rv">
+        <span class="no">05</span>
+        <div class="ic"><svg viewBox="0 0 24 24"><path d="M12 3v18M7 21h10M12 6l-7 2 3 6a3.5 3.5 0 0 1-6 0l3-6m13-2l-7 2 3 6a3.5 3.5 0 0 0 6 0l-3-6"/></svg></div>
+        <h3>Atuação Legal</h3>
+        <p>Dentro da Lei 13.432/17 e CBO 3518-05.</p>
+      </div>
+      <div class="cardx cta-card rv">
+        <div class="ic"><svg viewBox="0 0 24 24"><path d="M3 8l9-4 9 4-9 4-9-4z"/><path d="M7 10.5V15c0 1.6 2.2 3 5 3s5-1.4 5-3v-4.5"/><path d="M21 8v6"/></svg></div>
         <span class="seal">CBO 3518-05 · LEI 13.432/17</span>
-        <p>Capacitação completa para atuar como detetive particular com técnica, ética e total respaldo legal. Vagas limitadas por turma.</p>
+        <h3>Garanta sua vaga</h3>
+        <p>Certificação profissional. Turmas com vagas limitadas.</p>
         <a class="btn btn-g" href="https://wa.me/5567981196787?text=Tenho%20interesse%20no%20Curso%20de%20Detetive%20Profissional" target="_blank" data-mag>Quero me inscrever</a>
       </div>
     </div>
