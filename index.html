@@ -15,7 +15,7 @@
 :root{
   --bg:#0a0a0a; --bg2:#0c0c0c; --card:#0f0f0f;
   --gold:#c6cfdc; --gold2:#eef3fa; --gold-d:#8a95a6;
-  --blue:#39a9ff; --blue2:#7fc6ff;
+  --blue:#39a9ff; --blue2:#7fc6ff; --glint:#e8d2a0;
   --line:rgba(190,202,219,.26); --line2:rgba(255,255,255,.06);
   --white:#ffffff; --desc:#c7c7c7; --muted:#8a8a8a;
   --maxw:1240px; --r:16px;
@@ -130,9 +130,15 @@ header.small .brand img.logo-img{height:66px}
 /* services cards */
 .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
 .cardx{position:relative;border:1px solid var(--line2);border-radius:var(--r);padding:26px 22px;background:var(--card);min-height:206px;transition:transform .35s,border-color .35s,background .35s;overflow:hidden}
-.cardx::before{content:"";position:absolute;inset:0;border-radius:var(--r);padding:1px;opacity:0;transition:.35s;
-  background:linear-gradient(140deg,var(--gold),transparent 45%,transparent 60%,rgba(175,193,217,.4));
-  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude}
+@property --beam{syntax:'<angle>';initial-value:0deg;inherits:false}
+.cardx::before{content:"";position:absolute;inset:0;border-radius:var(--r);padding:1.4px;opacity:.5;transition:opacity .35s;
+  background:conic-gradient(from var(--beam),transparent 0deg,#cfd8e6 36deg,var(--blue) 62deg,var(--glint) 86deg,transparent 118deg,transparent 360deg);
+  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;
+  animation:beam 5s linear infinite}
+@keyframes beam{to{--beam:360deg}}
+.cardx:nth-child(3n)::before{animation-delay:-1.6s}
+.cardx:nth-child(3n+2)::before{animation-delay:-3.2s}
+@media(prefers-reduced-motion:reduce){.cardx::before{animation:none;background:linear-gradient(140deg,#cfd8e6,transparent 50%,var(--blue))}}
 .cardx::after{content:"";position:absolute;width:280px;height:280px;border-radius:50%;left:var(--x,50%);top:var(--y,50%);transform:translate(-50%,-50%);
   background:radial-gradient(circle,rgba(175,193,217,.13),transparent 60%);opacity:0;transition:opacity .35s;pointer-events:none}
 .cardx:hover{transform:translateY(-7px);background:#141210;border-color:var(--line)}
@@ -511,13 +517,6 @@ footer{border-top:1px solid var(--line2);background:#070707}
       <span class="seal rv">LEI 13.432/17</span>
       <span class="seal rv">CBO: 3518-05</span>
       <span class="seal rv">A VERDADE E O SIGILO</span>
-    </div>
-    <div class="cud rv">
-      <img src="assets/cud.png" alt="CUD Brasil — Central Única dos Detetives">
-      <div class="tx">
-        <small>Credencial de Representação</small>
-        <p>Representante da <b>Central Única dos Detetives</b> no <b>Mato Grosso do Sul</b>.</p>
-      </div>
     </div>
   </div>
 </section>
