@@ -28,14 +28,14 @@ a{text-decoration:none;color:inherit}
 .wrap{max-width:var(--maxw);margin:0 auto;padding:0 26px}
 .osw{font-family:'Oswald',sans-serif}
 .g{color:var(--gold)}
-.gt{background:linear-gradient(180deg,#ffffff 0%,#dbe6f5 13%,#9fb0c8 34%,#ffffff 50%,#c6d2e4 58%,#74859e 80%,#eaf1fa 100%);-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 1px 0 rgba(0,0,0,.45)) drop-shadow(0 0 11px rgba(57,169,255,.45))}
-.gt.sheen{background:linear-gradient(100deg,#7f8ea6 0%,#c9d5e8 16%,#ffffff 32%,#eef5ff 40%,#aab8cf 56%,#dde6f3 74%,#8394ab 100%);background-size:230% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:sheen 5.5s linear infinite}
+.gt{background:linear-gradient(180deg,#ffffff 0%,#e2ecf8 11%,#ead7ad 26%,#9fb0c8 40%,#ffffff 50%,#c6d2e4 58%,#d8c79a 72%,#74859e 86%,#eaf1fa 100%);-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 1px 0 rgba(0,0,0,.45)) drop-shadow(0 0 11px rgba(57,169,255,.4)) drop-shadow(0 0 13px rgba(232,210,160,.22))}
+.gt.sheen{background:linear-gradient(100deg,#8190a6 0%,#cdd9ec 16%,#ffffff 30%,#f0e6c8 40%,#aab8cf 56%,#dde6f3 74%,#8394ab 100%);background-size:230% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:sheen 5.5s linear infinite}
 @keyframes sheen{0%{background-position:185% 0}100%{background-position:-45% 0}}
 /* efeito cromado metalico em todos os titulos */
 .hero h1,.sec-head h2,.crest h2,.contact .ctitle,.cardx h3,.step h4,.step .n{
-  background:linear-gradient(180deg,#ffffff 0%,#dbe6f5 13%,#9fb0c8 34%,#ffffff 50%,#c6d2e4 58%,#74859e 80%,#eaf1fa 100%);
+  background:linear-gradient(180deg,#ffffff 0%,#e2ecf8 11%,#ead7ad 26%,#9fb0c8 40%,#ffffff 50%,#c6d2e4 58%,#d8c79a 72%,#74859e 86%,#eaf1fa 100%);
   -webkit-background-clip:text;background-clip:text;color:transparent;
-  filter:drop-shadow(0 1px 0 rgba(0,0,0,.4)) drop-shadow(0 0 9px rgba(57,169,255,.3))}
+  filter:drop-shadow(0 1px 0 rgba(0,0,0,.4)) drop-shadow(0 0 9px rgba(57,169,255,.28)) drop-shadow(0 0 12px rgba(232,210,160,.16))}
 
 /* ----- atmosfera ----- */
 .bgfx{position:fixed;inset:0;z-index:-3;background:linear-gradient(180deg,#0a0a0a,#0b0b0b 50%,#080808)}
@@ -63,6 +63,9 @@ a{text-decoration:none;color:inherit}
 /* ----- buttons ----- */
 .btn{position:relative;display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:15px 30px;border-radius:32px;font-weight:600;font-size:.92rem;cursor:pointer;border:1.5px solid transparent;transition:transform .25s,box-shadow .25s,background .25s,color .25s;white-space:nowrap;overflow:hidden;will-change:transform}
 .btn-g{color:#101822;background:linear-gradient(180deg,#fdfeff,#dbe2ee 44%,#aab4c4 78%,#cdd6e3);box-shadow:0 10px 28px rgba(0,0,0,.45),0 0 16px rgba(57,169,255,.28),inset 0 1px 1px rgba(255,255,255,.9),inset 0 -2px 6px rgba(120,134,156,.45)}
+.btn-g::before{content:"";position:absolute;inset:0;border-radius:inherit;padding:1.6px;pointer-events:none;opacity:.9;
+  background:conic-gradient(from var(--beam),transparent 0deg,#ffffff 32deg,var(--blue) 58deg,var(--glint) 82deg,transparent 116deg,transparent 360deg);
+  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;animation:beam 4.5s linear infinite}
 .btn-g::after{content:"";position:absolute;inset:0;background:linear-gradient(120deg,transparent,rgba(255,255,255,.65),transparent);transform:translateX(-130%)}
 .btn-g:hover{box-shadow:0 16px 38px rgba(0,0,0,.5),0 0 26px rgba(57,169,255,.5),inset 0 1px 1px rgba(255,255,255,.9)}
 .btn-g:hover::after{transform:translateX(130%);transition:transform .7s}
@@ -138,7 +141,7 @@ header.small .brand img.logo-img{height:66px}
 @keyframes beam{to{--beam:360deg}}
 .cardx:nth-child(3n)::before{animation-delay:-1.6s}
 .cardx:nth-child(3n+2)::before{animation-delay:-3.2s}
-@media(prefers-reduced-motion:reduce){.cardx::before{animation:none;background:linear-gradient(140deg,#cfd8e6,transparent 50%,var(--blue))}}
+@media(prefers-reduced-motion:reduce){.cardx::before,.cbox::before,.btn-g::before{animation:none;background:linear-gradient(140deg,#cfd8e6,transparent 50%,var(--blue))}}
 .cardx::after{content:"";position:absolute;width:280px;height:280px;border-radius:50%;left:var(--x,50%);top:var(--y,50%);transform:translate(-50%,-50%);
   background:radial-gradient(circle,rgba(175,193,217,.13),transparent 60%);opacity:0;transition:opacity .35s;pointer-events:none}
 .cardx:hover{transform:translateY(-7px);background:#141210;border-color:var(--line)}
@@ -195,7 +198,10 @@ header.small .brand img.logo-img{height:66px}
 .contact .ctitle{font-family:'Oswald',sans-serif;text-transform:uppercase;letter-spacing:3px;font-size:clamp(1.5rem,3vw,2rem);text-align:center;margin-bottom:8px}
 .atuando{text-align:center;font-size:1rem;color:var(--desc);font-weight:300;margin-bottom:44px}
 .atuando b{color:var(--gold2);font-weight:600}
-.cbox{display:grid;grid-template-columns:1.06fr .94fr;max-width:1000px;margin:0 auto;border:1px solid var(--line);border-radius:24px;overflow:hidden;background:linear-gradient(160deg,rgba(24,21,15,.66),rgba(12,12,12,.6));backdrop-filter:blur(16px);box-shadow:0 34px 90px rgba(0,0,0,.5)}
+.cbox{position:relative;display:grid;grid-template-columns:1.06fr .94fr;max-width:1000px;margin:0 auto;border:1px solid var(--line);border-radius:24px;overflow:hidden;background:linear-gradient(160deg,rgba(20,24,33,.66),rgba(12,12,12,.6));backdrop-filter:blur(16px);box-shadow:0 34px 90px rgba(0,0,0,.5)}
+.cbox::before{content:"";position:absolute;inset:0;border-radius:24px;padding:1.5px;z-index:3;pointer-events:none;opacity:.5;
+  background:conic-gradient(from var(--beam),transparent 0deg,#cfd8e6 36deg,var(--blue) 62deg,var(--glint) 86deg,transparent 118deg,transparent 360deg);
+  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;animation:beam 6.5s linear infinite}
 .cform{padding:40px}
 .flabel{font-family:'Oswald',sans-serif;letter-spacing:2px;text-transform:uppercase;font-size:.86rem;color:var(--gold2);margin-bottom:18px;display:flex;align-items:center;gap:10px}
 .flabel::before{content:"";width:22px;height:2px;background:var(--gold)}
