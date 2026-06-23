@@ -175,6 +175,12 @@ header.small .brand img.logo-img{height:66px}
 @keyframes floatC{0%,100%{transform:translateY(-9px)}50%{transform:translateY(9px)}}
 .crest .seals{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:26px;position:relative;z-index:1}
 .crest .seal{font-family:'Oswald',sans-serif;letter-spacing:1px;font-size:.82rem;color:var(--gold2);border:1px solid var(--line);border-radius:999px;padding:9px 20px;background:rgba(175,193,217,.05)}
+.cud{display:inline-flex;align-items:center;gap:24px;margin-top:38px;padding:18px 30px;border:1px solid rgba(212,175,55,.28);border-radius:18px;background:linear-gradient(160deg,rgba(212,175,55,.08),rgba(12,12,12,.5));backdrop-filter:blur(8px);text-align:left;position:relative;z-index:1;max-width:560px}
+.cud img{height:88px;width:auto;flex:none;filter:drop-shadow(0 6px 18px rgba(0,0,0,.55))}
+.cud .tx small{display:block;font-family:'Oswald',sans-serif;letter-spacing:2px;font-size:.66rem;text-transform:uppercase;color:#caa64a;margin-bottom:5px}
+.cud .tx p{color:var(--desc);font-weight:300;font-size:1rem;line-height:1.5}
+.cud .tx b{color:#e7c878;font-weight:600}
+@media(max-width:520px){.cud{flex-direction:column;text-align:center;gap:14px}.cud img{height:74px}}
 
 /* ===== CONTATO ===== */
 .contact{position:relative;padding:64px 0 112px}
@@ -505,6 +511,13 @@ footer{border-top:1px solid var(--line2);background:#070707}
       <span class="seal rv">LEI 13.432/17</span>
       <span class="seal rv">CBO: 3518-05</span>
       <span class="seal rv">A VERDADE E O SIGILO</span>
+    </div>
+    <div class="cud rv">
+      <img src="assets/cud.png" alt="CUD Brasil — Central Única dos Detetives">
+      <div class="tx">
+        <small>Credencial de Representação</small>
+        <p>Representante da <b>Central Única dos Detetives</b> no <b>Mato Grosso do Sul</b>.</p>
+      </div>
     </div>
   </div>
 </section>
