@@ -43,6 +43,14 @@ No arquivo `/etc/apache2/sites-available/grupoali.conf` descomente a linha `Stri
 sudo apache2ctl configtest && sudo systemctl reload apache2
 ```
 
+## Esconder a versão do Apache (ServerTokens — GLOBAL)
+`ServerTokens` é diretiva global (não vai dentro do VirtualHost). Ajuste uma vez só, no servidor:
+```bash
+sudo sed -i 's/^ServerTokens .*/ServerTokens Prod/' /etc/apache2/conf-available/security.conf
+sudo sed -i 's/^ServerSignature .*/ServerSignature Off/' /etc/apache2/conf-available/security.conf
+sudo apache2ctl configtest && sudo systemctl reload apache2
+```
+
 ## Observações
 - Se o firewall (UFW) estiver ativo, libere as portas web: `sudo ufw allow 'Apache Full'`.
 - O VirtualHost já inclui headers de segurança (nosniff, X-Frame-Options, CSP, Referrer-Policy, etc.) e bloqueia `.git`/dotfiles.
