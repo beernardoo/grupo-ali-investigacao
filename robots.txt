@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://grupoalidetetives.com.br/sitemap.xml
