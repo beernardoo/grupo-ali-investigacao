@@ -570,7 +570,7 @@ footer{border-top:1px solid var(--line2);background:#070707}
     <div class="ctitle rv">Envie sua solicitação com sigilo</div>
     <div class="atuando rv">Atuando sob a <b>Lei 13.432/17</b> e <b>CBO: 3518-05</b></div>
     <div class="cbox rv">
-      <form class="cform" onsubmit="event.preventDefault();window.open('https://wa.me/5567981196787?text='+encodeURIComponent('Olá, sou '+nome.value+' ('+email.value+'). Assunto: '+assunto.value+'. '+msg.value),'_blank')">
+      <form class="cform" onsubmit="event.preventDefault();var s=encodeURIComponent('Contato pelo site — '+(assunto.value||'Solicitação'));var b=encodeURIComponent('Nome: '+nome.value+'\nE-mail: '+email.value+'\nAssunto: '+assunto.value+'\n\n'+msg.value);window.location.href='mailto:contato@grupoalidetetives.com.br?subject='+s+'&body='+b">
         <div class="flabel">Fale com um detetive</div>
         <div class="row"><input id="nome" placeholder="Nome" required><input id="email" placeholder="E-mail" type="email"></div>
         <input id="assunto" placeholder="Assunto">
