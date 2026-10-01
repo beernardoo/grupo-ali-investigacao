@@ -51,6 +51,22 @@ sudo sed -i 's/^ServerSignature .*/ServerSignature Off/' /etc/apache2/conf-avail
 sudo apache2ctl configtest && sudo systemctl reload apache2
 ```
 
+## Atrás do Cloudflare — IP real + fail2ban (IMPORTANTE)
+Com a origem atrás do Cloudflare, o Apache vê o IP do CF como "visitante" e o fail2ban
+pode banir as faixas do próprio Cloudflare (causa de HTTP 521 intermitente). Corrija:
+```bash
+# 1) IP real do visitante via mod_remoteip
+sudo a2enmod remoteip
+sudo cp /var/www/grupoali/deploy/cloudflare-remoteip.conf /etc/apache2/conf-available/cloudflare-remoteip.conf
+sudo a2enconf cloudflare-remoteip
+sudo apache2ctl configtest && sudo systemctl reload apache2
+
+# 2) fail2ban ignorando as faixas do Cloudflare (no arquivo que define a jail, não só [DEFAULT])
+#    adicione as 15 faixas IPv4 + 7 IPv6 do CF em ignoreip e reinicie:
+sudo systemctl restart fail2ban
+```
+> As faixas oficiais do Cloudflare estão listadas em `cloudflare-remoteip.conf`.
+
 ## Observações
 - Se o firewall (UFW) estiver ativo, libere as portas web: `sudo ufw allow 'Apache Full'`.
 - O VirtualHost já inclui headers de segurança (nosniff, X-Frame-Options, CSP, Referrer-Policy, etc.) e bloqueia `.git`/dotfiles.

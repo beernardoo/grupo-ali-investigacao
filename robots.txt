@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /deploy/
 
 Sitemap: https://grupoalidetetives.com.br/sitemap.xml
